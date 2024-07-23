@@ -38,6 +38,9 @@ return {
       lspconfig.cssls.setup({
         capabilities = capabilities
       })
+      lspconfig.tailwindcss.setup({
+        capabilities = capabilities
+      })
       lspconfig.marksman.setup({
         capabilities = capabilities
       })

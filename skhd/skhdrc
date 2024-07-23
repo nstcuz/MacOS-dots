@@ -1,21 +1,43 @@
+# Open a new Kitty terminal 
+alt - t : open -na kitty
+
+# finder
+cmd - e : open ~/
+
+# add an on_enter command to the default mode
+:: default : yabai -m config active_window_border_color 0xfff9f5f4
+
 # change window focus within space
 alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 alt - h : yabai -m window --focus west
 alt - l : yabai -m window --focus east
 
+# toggle window float
+shift + alt - v : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
 # maximize a window
 alt - m : yabai -m window --toggle zoom-fullscreen
 
-# move window to prev and next space
-# shift + alt - n : yabai -m window --space prev;
-# shift + alt - p : yabai -m window --space next;
+# balance out tree of windows (resize to occupy same area)
+shift + alt - e : yabai -m space --balance
+
+# swap windows
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - h : yabai -m window --swap west
+shift + alt - l : yabai -m window --swap east
 
 # move window to space #
 shift + alt - 1 : yabai -m window --space 1;
 shift + alt - 2 : yabai -m window --space 2;
 shift + alt - 3 : yabai -m window --space 3;
 shift + alt - 4 : yabai -m window --space 4;
-shift + alt - 5 : yabai -m window --space 5;
-shift + alt - 6 : yabai -m window --space 6;
-shift + alt - 7 : yabai -m window --space 7;
+
+#move window to prev and next space with , and .
+shift + alt - 0x2B : yabai -m window --space prev;
+shift + alt - 0x2F : yabai -m window --space next;
+
+# Move to the previous workspace with ctrl + , and next workspace with ctrl + .
+#ctrl - 0x2B : yabai -m space --focus prev 
+#ctrl - 0x2F : yabai -m space --focus next

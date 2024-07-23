@@ -1,5 +1,8 @@
-# set to tiling WM
-yabai -m config layout bsp
+#make space for sketchybar
+yabai -m config external_bar all:34:0
+
+# toggle window float
+shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # new window spawns to the right if vertical split, or bottom if horizontal split
 yabai -m config window_placement second_child
@@ -24,8 +27,20 @@ yabai -m config mouse_action1 move
 yabai -m config mouse_action2 move
 
 # set mouse interaction modifier key (default: fn)
-yabai -m config mouse_modifier fn
+yabai -m config mouse_modifier cmd
 
 # disable certain apps
 yabai -m rule --add app="System Settings$" manage=off
 yabai -m rule --add app="Calculator$" manage=off
+
+# change focus to a different window
+alt - h : yabai -m window --focus west || yabai -m display --focus west
+alt - j : yabai -m window --focus south || yabai -m display --focus south
+alt - k : yabai -m window --focus north || yabai -m display --focus north
+alt - l : yabai -m window --focus east || yabai -m display --focus east
+
+# move window to another display
+# alt + shift - h : yabai -m window --swap west  || yabai -m window --display west; yabai -m display --focus west
+# alt + shift - j : yabai -m window --swap south || yabai -m window --display south; yabai -m display --focus south
+# alt + shift - k : yabai -m window --swap north || yabai -m window --display north; yabai -m display --focus north
+# alt + shift - l : yabai -m window --swap east  || yabai -m window --display east; yabai -m display --focus east
