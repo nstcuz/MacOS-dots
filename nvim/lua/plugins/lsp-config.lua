@@ -8,49 +8,41 @@ return {
   },
   {
     "williamboman/mason-lspconfig.nvim",
-      lazy = false,
-      opts = {
-        auto_install = true,
-        }
+    lazy = false,
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "lua_ls",
+          "tsserver",
+          "html",
+          "bashls",
+          "cssls",
+          "tailwindcss",
+          "marksman",
+          "phpactor"
+        },
+        automatic_installation = true,
+      })
+    end,
   },
   {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
       local lspconfig = require("lspconfig")
-      lspconfig.tsserver.setup({
-        capabilities = capabilities
-      })
-      lspconfig.solargraph.setup({
-        capabilities = capabilities
-      })
-      lspconfig.html.setup({
-        capabilities = capabilities
-      })
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.bashls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.cssls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.tailwindcss.setup({
-        capabilities = capabilities
-      })
-      lspconfig.marksman.setup({
-        capabilities = capabilities
-      })
-      lspconfig.phpactor.setup({
-        capabilities = capabilities
-      })
+      lspconfig.tsserver.setup({})
+      lspconfig.solargraph.setup({})
+      lspconfig.html.setup({})
+      lspconfig.lua_ls.setup({})
+      lspconfig.bashls.setup({})
+      lspconfig.cssls.setup({})
+      lspconfig.tailwindcss.setup({})
+      lspconfig.marksman.setup({})
+      lspconfig.phpactor.setup({})
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+      vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, {})
     end,
   },
 }
