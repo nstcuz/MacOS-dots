@@ -1,0 +1,38 @@
+#enable scripting
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# default layout (can be bsp, stack or float)
+yabai -m config layout bsp
+
+# make space for sketchybar
+yabai -m config external_bar all:36:0
+
+# new window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+
+# Set all padding and gaps to 6pt (default: 0)
+yabai -m config top_padding 6
+yabai -m config bottom_padding 6
+yabai -m config left_padding 6
+yabai -m config right_padding 6
+yabai -m config window_gap 6
+
+# set mouse follows focus mode (default: off)
+yabai -m config mouse_follows_focus on
+
+# set focus follows mouse mode (default: off, options: off, autoraise, autofocus)
+yabai -m config focus_follows_mouse autoraise
+
+# left click & drag to move
+yabai -m config mouse_action1 move
+
+# right click & drag to resize
+yabai -m config mouse_action2 resize
+
+# disable certain apps from being managed by Yabai
+yabai -m rule --add app="System Settings$" manage=off
+yabai -m rule --add app="Calculator$" manage=off
+yabai -m rule --add app="Messages$" manage=off
+yabai -m rule --add app="MAMP$" manage=off
+yabai -m rule --add app="^Arc$" title="^$" mouse_follows_focus=off
