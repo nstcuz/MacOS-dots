@@ -23,7 +23,6 @@ bar=(
    width=200
    corner_radius=50
    blur_radius=30
-   color=0x40000000
    border_width=2
    border_color=$WHITE
 )
@@ -44,7 +43,7 @@ default=(
   label.color=$BASE
   background.color=$WHITE
   background.corner_radius=36
-  background.height=30
+  background.height=28
   icon.padding_left=4
   icon.padding_right=4
   label.padding_left=12

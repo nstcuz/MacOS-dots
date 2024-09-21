@@ -8,7 +8,7 @@ alt - t : open -na kitty
 ctrl + alt - v : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # maximize a window
-ctrl - m : yabai -m window --toggle zoom-fullscreen
+alt - m : yabai -m window --toggle zoom-fullscreen
 
 # balance out tree of windows
 ctrl + alt - 0 : yabai -m space --balance
