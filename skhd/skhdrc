@@ -8,20 +8,24 @@ alt - t : open -na kitty
 ctrl + alt - v : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # maximize a window
-alt - m : yabai -m window --toggle zoom-fullscreen
+ctrl -  m : yabai -m window --toggle zoom-fullscreen
 
 # balance out tree of windows
 ctrl + alt - 0 : yabai -m space --balance
 
-# move window to space #
-ctrl + alt - 1 : yabai -m window --space 1;
-ctrl + alt - 2 : yabai -m window --space 2;
-ctrl + alt - 3 : yabai -m window --space 3;
-ctrl + alt - 4 : yabai -m window --space 4;
+# move window to space # // this keybind has stopped workingwith sequioa
+#ctrl + alt - 1 : yabai -m window --space 1;
+#ctrl + alt - 2 : yabai -m window --space 2;
+#ctrl + alt - 3 : yabai -m window --space 3;
+#ctrl + alt - 4 : yabai -m window --space 4;
+
+ctrl + shift - 1 : yabai -m window --space 1;
+ctrl + shift - 2 : yabai -m window --space 2;
+ctrl + shift - 3 : yabai -m window --space 3;
+ctrl + shift - 4 : yabai -m window --space 4;
 
 # Move window to previous space, if no previous space, focus previous display
 ctrl + alt - 0x2B : if [ "$(yabai -m query --spaces --space prev | jq '.index')" != "null" ]; then yabai -m window --space prev; else yabai -m display --focus prev; fi
-
 # Move window to next space, if no next space, focus next display
 ctrl + alt - 0x2F : if [ "$(yabai -m query --spaces --space next | jq '.index')" != "null" ]; then yabai -m window --space next; else yabai -m display --focus next; fi
 

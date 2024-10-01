@@ -38,4 +38,5 @@ yabai -m rule --add app="System Settings$" manage=off
 yabai -m rule --add app="Calculator$" manage=off
 yabai -m rule --add app="Messages$" manage=off
 yabai -m rule --add app="MAMP$" manage=off
+# yabai -m rule --add app="iPhone Mirroring$" manage=off
 yabai -m rule --add app="^Arc$" title="^$" mouse_follows_focus=off
