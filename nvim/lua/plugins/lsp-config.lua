@@ -13,7 +13,7 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
-          "tsserver",
+          "ts_ls",
           "html",
           "bashls",
           "cssls",
@@ -30,7 +30,7 @@ return {
     lazy = false,
     config = function()
       local lspconfig = require("lspconfig")
-      lspconfig.tsserver.setup({})
+      lspconfig.ts_ls.setup({})
       lspconfig.solargraph.setup({})
       lspconfig.html.setup({})
       lspconfig.lua_ls.setup({})
